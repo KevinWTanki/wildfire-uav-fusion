@@ -1,7 +1,6 @@
 # Wildfire UAV — RGB-Thermal Fusion Detection
 
-Personal research project exploring multi-modal image fusion for wildfire detection from UAV platforms.  
-Developed independently as part of a university application portfolio.
+Personal research project exploring multi-modal image fusion for wildfire detection from UAV platforms.
 
 ---
 
@@ -83,8 +82,8 @@ python week1_pipeline.py
 
 ---
 
-## Academic Integrity Note
+## Development Notes
 
 All code in this repository is written by me unless explicitly attributed.  
-Where I used AI assistance (Claude Code) for debugging or explanation, the relevant commit messages note this.  
+Where I used AI assistance for debugging or explanation, the relevant commit messages note this.  
 Commit history reflects the actual development timeline — decisions, dead ends, and corrections included.
