@@ -1,0 +1,47 @@
+# Dataset (too large for GitHub)
+data/
+LLVIP/LLVIP/
+LLVIP/*.zip
+*.zip
+*.tar.gz
+
+# Model weights
+*.pt
+*.pth
+*.onnx
+*.weights
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.Python
+*.egg-info/
+
+# Virtual environments
+venv/
+backtest/
+quant_env/
+
+# Output images (keep structure, ignore large batches)
+output/**/*.png
+!output/.gitkeep
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Claude Code internals
+.claude/
+CLAUDE.md
+
+# Unrelated files
+pcb.svg
+results/
