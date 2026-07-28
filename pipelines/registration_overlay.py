@@ -1,5 +1,5 @@
 """
-Week 1 Pipeline: load -> warpPerspective -> overlay
+Registration Overlay Pipeline: load -> warpPerspective -> overlay
 Dataset: LLVIP (Low-Light Visible-Infrared Pairs)
 Root:    C:/wildfire_uav/LLVIP/LLVIP/
 """

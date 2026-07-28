@@ -1,7 +1,6 @@
 # Dataset (too large for GitHub)
 data/
-LLVIP/LLVIP/
-LLVIP/*.zip
+LLVIP/
 *.zip
 *.tar.gz
 
@@ -18,8 +17,13 @@ __pycache__/
 .Python
 *.egg-info/
 
+# Editor/backup cruft
+*.bak
+*.py-
+
 # Virtual environments
 venv/
+.venv/
 backtest/
 quant_env/
 

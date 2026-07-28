@@ -47,8 +47,10 @@ Technical choices I made and why — full reasoning in [`docs/decisions/`](docs/
 
 ```
 wildfire-uav-fusion/
-├── week1_pipeline.py       # Phase 1: load → warpPerspective → overlay
-├── verify_dataset.py       # FLIR ADAS dataset integrity checker
+├── pipelines/
+│   └── registration_overlay.py   # Phase 1: load → warpPerspective → overlay
+├── tools/
+│   └── validate_dataset.py       # FLIR ADAS dataset integrity checker
 ├── output/                 # Pipeline visualisation outputs (gitignored in bulk)
 ├── docs/
 │   ├── setup.md            # Environment & dataset setup guide
@@ -74,10 +76,10 @@ pip install opencv-python==4.9.0.80 numpy==1.24.0 matplotlib==3.7.0 \
 
 ```bash
 # Verify FLIR ADAS dataset integrity
-python verify_dataset.py
+python tools/validate_dataset.py
 
-# Run Week 1 fusion pipeline (requires LLVIP dataset)
-python week1_pipeline.py
+# Run registration overlay pipeline (requires LLVIP dataset)
+python pipelines/registration_overlay.py
 ```
 
 ---

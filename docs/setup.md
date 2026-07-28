@@ -46,4 +46,4 @@ data/flir_adas/aligned/
 └── align_validation.txt (1,013 entries)
 ```
 
-Run `python verify_dataset.py` to confirm dataset integrity before use.
+Run `python tools/validate_dataset.py` to confirm dataset integrity before use.

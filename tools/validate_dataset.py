@@ -1,5 +1,5 @@
 """
-Step 2 · Verify Dataset Integrity
+Verify Dataset Integrity
 Dataset: FLIR ADAS aligned subset
 Root:    C:/wildfire_uav/data/flir_adas/aligned
 

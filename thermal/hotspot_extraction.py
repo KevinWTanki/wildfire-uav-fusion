@@ -1,5 +1,5 @@
 """
-Step 4 -- ThermalHotspotExtractor
+ThermalHotspotExtractor
 Implements Stage 1-2 of the thermal analysis algorithm (CLAUDE.md Sec. 7.2).
 
 Stage 1 -- Adaptive thresholding
@@ -16,7 +16,7 @@ Stage 2 -- Hotspot feature extraction
 Output per frame: list of Hotspot dataclasses, one per detected region.
 This module is stateless across frames -- it says nothing about whether a
 hotspot is growing. Stage 3 (temporal growth rate, dA/dt) is a separate,
-harder module built on top of this one: see step4b_growth_kalman.py.
+harder module built on top of this one: see growth_rate_tracker.py.
 
 Test suite (no FLAME3 required):
     A. Synthetic sequence -- known fire growing from radius 10 -> 50 px over
@@ -71,7 +71,7 @@ class ThermalHotspotExtractor:
     Frame-by-frame thermal hotspot detector. Stateless across calls -- each
     process() call only looks at the current frame (Stage 1-2). Cross-frame
     tracking / growth rate is added by HotspotGrowthTracker in
-    step4b_growth_kalman.py.
+    growth_rate_tracker.py.
 
     Usage:
         extractor = ThermalHotspotExtractor()
@@ -196,7 +196,7 @@ def run_synthetic_test():
     Test A -- Expanding circular fire (30 frames, R: 10->50 px, fire_T=95 degC).
     Verifies Stage 1-2 recall and circularity as the fire grows.
     No temporal claim is made here -- growth direction (dA/dt) is Stage 3's
-    job, tested separately in step4b_growth_kalman.py.
+    job, tested separately in growth_rate_tracker.py.
     """
     print("=" * 60)
     print("TEST A -- Synthetic expanding fire sequence (Stage 1-2 only)")
