@@ -1,0 +1,41 @@
+# FASDD_UAV -- Ultralytics detection dataset config
+#
+# Source:    FASDD (Flame And Smoke Detection Dataset), UAV sub-dataset
+# Version:   V9 (Science Data Bank record, updated 2025-09-11)
+# Licence:   CC BY-SA 4.0 -- attribution + share-alike, commercial use permitted
+# Citation (required by the licence):
+#   Wang, M., Yue, P., Jiang, L., Yu, D., Tuo, T., & Li, J. (2025). An open
+#   flame and smoke detection dataset for deep learning in remote sensing
+#   based fire detection. Geo-spatial Information Science, 28(2), 511-526.
+#
+# Class-id mapping (see docs/decisions/002-yolov8-class-definition.md and
+# the Step 1 dataset audit): FASDD_UAV's own label files call these classes
+# "fire" and "smoke". This project's class list is {flame, smoke}.
+# Id order is left exactly as FASDD ships it (0, 1) -- only
+# id 0's *name* is remapped from FASDD's "fire" to the project's "flame".
+# No label files were touched or remapped; this is a naming choice made
+# once, here, not a re-annotation. Verified exhaustively (not sampled) that
+# id 0 never appears in a smoke-only-prefixed image and id 1 never appears
+# in a fire-only-prefixed image -- see the Step 1 audit report.
+#
+# Path note: `path` below is written relative to this file for readability,
+# but Ultralytics resolves a *relative* `path:` against its own global
+# DATASETS_DIR setting, not against this YAML's location (ultralytics/data/
+# utils.py:check_det_dataset) -- so this string is documentation only.
+# detection/train_yolov8.py and detection/evaluate.py both load this file,
+# then overwrite `path` with an absolute path computed from their own
+# location before calling Ultralytics, which is what actually makes this
+# config portable across machines without a hardcoded absolute path here.
+#
+# train/val/test point at FASDD's own split lists, copied verbatim to the
+# FASDD_UAV root by detection/dataset_prep.py (never hand-edited) -- see
+# that module's docstring for why the copy is needed.
+
+path: ../data/FASDD_UAV
+train: train.txt
+val: val.txt
+test: test.txt
+
+names:
+  0: flame   # FASDD_UAV label: "fire"
+  1: smoke   # FASDD_UAV label: "smoke"

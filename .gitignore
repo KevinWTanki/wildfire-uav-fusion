@@ -10,6 +10,10 @@ LLVIP/
 *.onnx
 *.weights
 
+# Ultralytics run directories (detection/train_yolov8.py, detection/evaluate.py)
+runs/
+*.log
+
 # Python
 __pycache__/
 *.pyc
