@@ -25,7 +25,7 @@ Design note -- why same-modal, not cross-modal:
   is to validate the RANSAC pipeline mechanics in isolation -- same-modal
   gives 1200+ matches, which is the clean test for that.
 
-Acceptance criteria (CLAUDE.md Sec.6):
+Acceptance criteria:
   Mean corner reprojection error < 2 px
 """
 

@@ -1,6 +1,6 @@
 """
 ThermalHotspotExtractor
-Implements Stage 1-2 of the thermal analysis algorithm (CLAUDE.md Sec. 7.2).
+Implements Stage 1-2 of the thermal analysis algorithm.
 
 Stage 1 -- Adaptive thresholding
     T_threshold = max(mean_temp + 3 * std_temp, 60.0)  # hard floor 60 degC
@@ -26,7 +26,7 @@ Test suite (no FLAME3 required):
        Note: driving scenes have no actual wildfires; Stage 1's 60 degC floor
        suppresses most detections, which is the correct behavior.
 
-Acceptance criteria (CLAUDE.md Sec. 7):
+Acceptance criteria:
     - Hotspot recall (synthetic, T > 80 degC regions): > 90%
     - Stage 1-2 latency: < 200 ms/frame
 """
@@ -351,7 +351,10 @@ The 60 degC floor eliminates these marginal cases:
   - Smoldering ignition points exceed 80-150 degC.
 The floor therefore targets the discriminating temperature between
 passively-heated non-fire surfaces and actively-burning material.
-(Ben: verify against local ambient temperature data for your test site.)
+Unlike the 3-sigma term, this floor is a fixed constant rather than one
+that adapts to ambient conditions -- it reflects one assumed climate, and
+should be re-checked against measured local temperature data before use
+at a different deployment site.
 """
 
 

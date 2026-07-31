@@ -1,7 +1,7 @@
 """
 IoUFusionEngine
-Implements Sec. 7.3 of CLAUDE.md: the Decision Fusion Engine that combines
-YOLOv8 (RGB) detections with the Stage 1-3 thermal pipeline output
+Implements the Decision Fusion Engine that combines YOLOv8 (RGB)
+detections with the Stage 1-3 thermal pipeline output
 (hotspot_extraction.ThermalHotspotExtractor + growth_rate_tracker.HotspotGrowthTracker)
 into a single per-track fire probability and patrol/re-verify/alert decision.
 
@@ -24,21 +24,21 @@ Per-channel scores:
     P_growth           : dA/dt from the Kalman filter (growth_rate_tracker),
                          normalized against GROWTH_SATURATE_PX2_S. Negative/near-zero
                          growth (static heat source) clips to 0 -- this is the
-                         primary differentiator per CLAUDE.md Sec. 7.2 Stage 3.
-    P_location_prior   : PLACEHOLDER, fixed at 0.5 (neutral). Sec. 7.3 assigns
-                         it a nonzero weight for a known-fire-history /
-                         terrain-risk map that lives in the Mission Layer
-                         (Sec. 2), which does not exist yet. Do not read
+                         primary differentiator, per Stage 3 (growth_rate_tracker.py).
+    P_location_prior   : PLACEHOLDER, fixed at 0.5 (neutral). Intended to
+                         carry a nonzero weight for a known-fire-history /
+                         terrain-risk map that lives in the Mission Layer,
+                         which does not exist yet. Do not read
                          anything into this value beyond "not yet wired up" --
                          it is a stand-in, not a calibrated prior.
 
 Coordinate-space note: this module assumes thermal and RGB boxes are already
 in a common pixel frame (i.e. downstream of the Phase 2 Homography warp in
 calibration/ and the not-yet-built fusion/realtime_registration.py). Real
-YOLOv8 output does not exist yet either (Phase 3, Sec. 7.1) -- per CLAUDE.md
-Sec. 6, "simulated YOLO boxes as placeholder until Phase 3 model is ready",
-this module exercises the fusion arithmetic and IoU matching logic against
-synthetic RGB boxes, not a real detector.
+YOLOv8 output does not exist yet either (Phase 3 training is not complete)
+-- this module exercises the fusion arithmetic and IoU matching logic
+against synthetic RGB boxes standing in for real detections, not a real
+detector.
 
 Test suite (no FLAME3 / no trained YOLOv8 required):
     C1 -- Confirmed alert: hot (open-flame range), expanding, RGB+thermal
@@ -47,14 +47,14 @@ Test suite (no FLAME3 / no trained YOLOv8 required):
     C2 -- Canopy occlusion: identical thermal signal to C1, but no YOLO box
           (RGB blocked). Verifies the system does NOT reach full ALERT on
           thermal growth alone -- it lands in the 0.50-0.75 re-verify band.
-          This is the direct operational test of the project's core thesis
-          (CLAUDE.md Sec. 1): neither modality alone is sufficient.
+          This is the direct operational test of the project's core thesis:
+          neither modality alone is sufficient.
     C3 -- Static distractor with RGB corroboration: hot, RGB-visible (e.g. a
           vehicle engine misclassified with moderate confidence), but NOT
           growing. Verifies P_fire stays under the 0.50 patrol threshold --
           growth, not raw heat + a visual match, is what should gate alerting.
 
-Acceptance criteria (CLAUDE.md Sec. 7):
+Acceptance criteria:
     - Combined Phase 2+3 pipeline throughput: >= 8 FPS on Jetson Nano
       (checked here as fusion-step latency, additive to Stage 1-3 latency)
 """
@@ -98,7 +98,7 @@ DEFAULT_LOCATION_PRIOR = 0.5   # placeholder -- see module docstring
 
 @dataclass
 class SimulatedYOLODetection:
-    """Stand-in for a real YOLOv8 (Sec. 7.1) RGB detection."""
+    """Stand-in for a real YOLOv8 RGB detection."""
     bbox:       tuple    # (x, y, w, h), same pixel frame as thermal (see note above)
     confidence: float
     class_name: str = "flame"
@@ -106,7 +106,7 @@ class SimulatedYOLODetection:
 
 @dataclass
 class FusedDetection:
-    """One track's Sec. 7.3 decision-fusion output."""
+    """One track's decision-fusion output."""
     track_id:         int
     bbox_thermal:     tuple
     bbox_yolo:        Optional[tuple]
@@ -166,7 +166,7 @@ def decide_action(p_fire: float) -> str:
 class IoUFusionEngine:
     """
     Matches Stage 1-3 thermal tracks to (simulated) YOLOv8 RGB boxes via IoU,
-    then computes the Sec. 7.3 weighted P_fire score per track.
+    then computes the weighted P_fire score per track.
 
     Usage:
         engine = IoUFusionEngine()
@@ -304,7 +304,7 @@ def _run_scenario(name: str, n_frames: int, r0: float, r1: float,
 
 def run_fusion_tests() -> dict:
     print("=" * 70)
-    print("TEST C -- IoUFusionEngine synthetic scenarios (Sec. 7.3)")
+    print("TEST C -- IoUFusionEngine synthetic scenarios")
     print("=" * 70)
 
     # C1 -- confirmed alert: open-flame-range, expanding, RGB+thermal agree.
@@ -332,8 +332,7 @@ def run_fusion_tests() -> dict:
     # computed over the WHOLE frame, so once a hot, fast-growing disk occupies
     # a large fraction of the 120x160 synthetic frame, it drags the frame-wide
     # mean/std up enough to destabilize its own detected area late in the
-    # sequence -- a real Stage-1 limitation worth a logbook note, not a
-    # fusion-engine bug.)
+    # sequence -- a real Stage-1 limitation, not a fusion-engine bug.)
     p1, p2, p3 = c1["peak_fused"], c2["peak_fused"], c3["peak_fused"]
 
     c1_verdict = "PASS" if (p1 and p1.P_fire > ALERT_THRESH) else "FAIL"
@@ -367,7 +366,7 @@ def run_fusion_tests() -> dict:
 # -- Main ------------------------------------------------------------------------
 
 def main():
-    print("IoUFusionEngine -- Step 5 Validation (Sec. 7.3 decision fusion)")
+    print("IoUFusionEngine -- Step 5 Validation (decision fusion)")
     print("Assumes Stage 1-3 (step4_hotspot.py, step4b_growth_kalman.py) already")
     print("validated separately. YOLOv8 boxes are simulated (Phase 3 model not")
     print("yet trained) -- see module docstring for what this test does and")

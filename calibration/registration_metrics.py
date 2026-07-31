@@ -2,9 +2,8 @@
 Homography Validation
 Dataset : FLIR ADAS aligned (Zhang et al. ICIP2020)
 
-Validates the Phase 2 pipeline on two remaining acceptance criteria
-(CLAUDE.md Sec.6) not covered by homography_estimation.py's corner
-reprojection test:
+Validates the Phase 2 pipeline on two remaining acceptance criteria not
+covered by homography_estimation.py's corner reprojection test:
 
   1. Edge alignment error (< 3 px)
      After warping the misaligned thermal back with H_est, Canny edges on the
@@ -143,10 +142,10 @@ def edge_alignment_error(th_original: np.ndarray, th_restored: np.ndarray) -> fl
       On driving data (FLIR ADAS), cross-modal edge coincidence is inherently
       low (~5 px even on perfectly-aligned pairs) because RGB carries lane
       markings, signs, and logos that are invisible in thermal, while thermal
-      shows engine-heat boundaries absent in RGB.  The CLAUDE.md Sec.6 < 3 px
-      cross-modal criterion targets FLAME3 wildfire scenes, where fire/smoke
-      boundaries dominate and appear in BOTH modalities at the same location.
-      That metric is validated in Phase 5 (hardware + FLAME3).
+      shows engine-heat boundaries absent in RGB.  The < 3 px cross-modal
+      criterion targets FLAME3 wildfire scenes, where fire/smoke boundaries
+      dominate and appear in BOTH modalities at the same location. That
+      metric is validated in Phase 5 (hardware + FLAME3).
 
       For the software-first validation, same-modal restoration error is the
       correct measure: if H_est ~ H_gt then inv(H_est) undoes the warp and

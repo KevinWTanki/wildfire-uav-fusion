@@ -1,7 +1,7 @@
 """
 HotspotGrowthTracker
-Implements Stage 3 of the thermal analysis algorithm (CLAUDE.md Sec. 7.2):
-temporal growth rate (dA/dt), built on top of the per-frame Hotspot
+Implements Stage 3 of the thermal analysis algorithm: temporal growth
+rate (dA/dt), built on top of the per-frame Hotspot
 detections produced by hotspot_extraction.ThermalHotspotExtractor (Stage 1-2).
 
 Stage 3 -- Temporal growth rate (dA/dt)
@@ -17,9 +17,9 @@ sun-warmed rock or vehicle engine that already cleared the Stage 1 threshold).
 It is deliberately a separate module from hotspot_extraction.py: Stage 1-2 are
 per-frame, stateless, and comparatively simple (thresholding + connected
 components). Stage 3 requires cross-frame identity tracking and a recursive
-state estimator (Kalman filter) -- a materially different and harder problem,
-worth its own commit and its own entry in the engineering logbook (CLAUDE.md
-Sec. 10 self-test: derive the predict/update equations, don't just cite them).
+state estimator (Kalman filter) -- a materially different and harder
+problem, which is why it is a separate module rather than an extension of
+Stage 1-2.
 
 Usage:
     extractor = ThermalHotspotExtractor()   # Stage 1-2, from hotspot_extraction
@@ -43,7 +43,7 @@ Test suite (no FLAME3 required):
     A2 -- Static heat source (30 frames, R constant at 30 px).
           Verifies Stage 3: dA/dt converges to ~0 for non-fire sources.
 
-Acceptance criteria (CLAUDE.md Sec. 7):
+Acceptance criteria:
     - Growth-rate computation latency: < 200 ms/frame
 """
 
