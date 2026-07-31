@@ -1,0 +1,387 @@
+{
+  "synthetic_H": [
+    [
+      0.9962,
+      -0.0872,
+      8.0
+    ],
+    [
+      0.0872,
+      0.9962,
+      -5.0
+    ],
+    [
+      0.0001,
+      0.0001,
+      1.0
+    ]
+  ],
+  "config": {
+    "n_pairs": 50,
+    "ransac_thresh": 3.0,
+    "ransac_confidence": 0.995,
+    "lowe_ratio": 0.75,
+    "sift_nfeatures": 2000
+  },
+  "summary": {
+    "n_evaluated": 50,
+    "n_failed": 0,
+    "mean_reproj_error_px": 0.0822,
+    "median_reproj_error_px": 0.0653,
+    "max_reproj_error_px": 0.3094,
+    "pass_rate_pct": 100.0,
+    "verdict": "PASS"
+  },
+  "per_pair": [
+    {
+      "stem": "FLIR_00258_PreviewData",
+      "n_matches": 1246,
+      "n_inliers": 1237,
+      "reproj_error_px": 0.0829,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_07748_PreviewData",
+      "n_matches": 1078,
+      "n_inliers": 1068,
+      "reproj_error_px": 0.0738,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_02800_PreviewData",
+      "n_matches": 1237,
+      "n_inliers": 1232,
+      "reproj_error_px": 0.0719,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_07463_PreviewData",
+      "n_matches": 1076,
+      "n_inliers": 1063,
+      "reproj_error_px": 0.057,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_02186_PreviewData",
+      "n_matches": 803,
+      "n_inliers": 792,
+      "reproj_error_px": 0.1275,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_03825_PreviewData",
+      "n_matches": 1137,
+      "n_inliers": 1126,
+      "reproj_error_px": 0.061,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_02790_PreviewData",
+      "n_matches": 1290,
+      "n_inliers": 1278,
+      "reproj_error_px": 0.0892,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_04133_PreviewData",
+      "n_matches": 1275,
+      "n_inliers": 1264,
+      "reproj_error_px": 0.0518,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_00701_PreviewData",
+      "n_matches": 1373,
+      "n_inliers": 1316,
+      "reproj_error_px": 0.259,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_02733_PreviewData",
+      "n_matches": 1234,
+      "n_inliers": 1225,
+      "reproj_error_px": 0.0681,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_04277_PreviewData",
+      "n_matches": 1192,
+      "n_inliers": 1181,
+      "reproj_error_px": 0.0516,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_05562_PreviewData",
+      "n_matches": 1161,
+      "n_inliers": 1147,
+      "reproj_error_px": 0.0611,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_02319_PreviewData",
+      "n_matches": 1265,
+      "n_inliers": 1252,
+      "reproj_error_px": 0.0955,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_04878_PreviewData",
+      "n_matches": 1257,
+      "n_inliers": 1245,
+      "reproj_error_px": 0.0759,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_04868_PreviewData",
+      "n_matches": 1270,
+      "n_inliers": 1256,
+      "reproj_error_px": 0.085,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_00700_PreviewData",
+      "n_matches": 1300,
+      "n_inliers": 1260,
+      "reproj_error_px": 0.2359,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_06536_PreviewData",
+      "n_matches": 1282,
+      "n_inliers": 1275,
+      "reproj_error_px": 0.0356,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_05386_PreviewData",
+      "n_matches": 1289,
+      "n_inliers": 1287,
+      "reproj_error_px": 0.0456,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_07476_PreviewData",
+      "n_matches": 1110,
+      "n_inliers": 1096,
+      "reproj_error_px": 0.0661,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_00935_PreviewData",
+      "n_matches": 1261,
+      "n_inliers": 1233,
+      "reproj_error_px": 0.0841,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_02487_PreviewData",
+      "n_matches": 1210,
+      "n_inliers": 1079,
+      "reproj_error_px": 0.1077,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_05217_PreviewData",
+      "n_matches": 1236,
+      "n_inliers": 1230,
+      "reproj_error_px": 0.1238,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_06866_PreviewData",
+      "n_matches": 1250,
+      "n_inliers": 1238,
+      "reproj_error_px": 0.0638,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_07055_PreviewData",
+      "n_matches": 1195,
+      "n_inliers": 1187,
+      "reproj_error_px": 0.0556,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_02445_PreviewData",
+      "n_matches": 1183,
+      "n_inliers": 1176,
+      "reproj_error_px": 0.1161,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_04946_PreviewData",
+      "n_matches": 1186,
+      "n_inliers": 1168,
+      "reproj_error_px": 0.0596,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_03241_PreviewData",
+      "n_matches": 1233,
+      "n_inliers": 1221,
+      "reproj_error_px": 0.0676,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_00060_PreviewData",
+      "n_matches": 1234,
+      "n_inliers": 1120,
+      "reproj_error_px": 0.3094,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_04128_PreviewData",
+      "n_matches": 1222,
+      "n_inliers": 1178,
+      "reproj_error_px": 0.0626,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_00125_PreviewData",
+      "n_matches": 1199,
+      "n_inliers": 1191,
+      "reproj_error_px": 0.0845,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_02620_PreviewData",
+      "n_matches": 1255,
+      "n_inliers": 1181,
+      "reproj_error_px": 0.0541,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_06571_PreviewData",
+      "n_matches": 1298,
+      "n_inliers": 1288,
+      "reproj_error_px": 0.1097,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_02863_PreviewData",
+      "n_matches": 1242,
+      "n_inliers": 1235,
+      "reproj_error_px": 0.0417,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_03821_PreviewData",
+      "n_matches": 1145,
+      "n_inliers": 1138,
+      "reproj_error_px": 0.0743,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_07847_PreviewData",
+      "n_matches": 1190,
+      "n_inliers": 1178,
+      "reproj_error_px": 0.0646,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_03306_PreviewData",
+      "n_matches": 1343,
+      "n_inliers": 1338,
+      "reproj_error_px": 0.0457,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_03352_PreviewData",
+      "n_matches": 1307,
+      "n_inliers": 1296,
+      "reproj_error_px": 0.1042,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_07466_PreviewData",
+      "n_matches": 1064,
+      "n_inliers": 1055,
+      "reproj_error_px": 0.0522,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_03066_PreviewData",
+      "n_matches": 1145,
+      "n_inliers": 1134,
+      "reproj_error_px": 0.0448,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_00981_PreviewData",
+      "n_matches": 1281,
+      "n_inliers": 1233,
+      "reproj_error_px": 0.0535,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_06995_PreviewData",
+      "n_matches": 1113,
+      "n_inliers": 1097,
+      "reproj_error_px": 0.0937,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_02455_PreviewData",
+      "n_matches": 1238,
+      "n_inliers": 1227,
+      "reproj_error_px": 0.0559,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_04874_PreviewData",
+      "n_matches": 1270,
+      "n_inliers": 1249,
+      "reproj_error_px": 0.0572,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_02969_PreviewData",
+      "n_matches": 1158,
+      "n_inliers": 1147,
+      "reproj_error_px": 0.0627,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_04040_PreviewData",
+      "n_matches": 971,
+      "n_inliers": 962,
+      "reproj_error_px": 0.0386,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_04407_PreviewData",
+      "n_matches": 1230,
+      "n_inliers": 1223,
+      "reproj_error_px": 0.0552,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_03170_PreviewData",
+      "n_matches": 1175,
+      "n_inliers": 1161,
+      "reproj_error_px": 0.0428,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_04573_PreviewData",
+      "n_matches": 1171,
+      "n_inliers": 1156,
+      "reproj_error_px": 0.1062,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_00200_PreviewData",
+      "n_matches": 1342,
+      "n_inliers": 1253,
+      "reproj_error_px": 0.0659,
+      "pass": true
+    },
+    {
+      "stem": "FLIR_08119_PreviewData",
+      "n_matches": 1198,
+      "n_inliers": 1165,
+      "reproj_error_px": 0.0581,
+      "pass": true
+    }
+  ]
+}
