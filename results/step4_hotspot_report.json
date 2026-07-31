@@ -1,0 +1,21 @@
+{
+  "algorithm": {
+    "sigma_factor": 3.0,
+    "hard_floor_degC": 60.0,
+    "min_area_px": 9,
+    "fps": 8.0
+  },
+  "test_A_synthetic": {
+    "recall_pct": 100.0,
+    "mean_latency_ms": 1.64,
+    "recall_verdict": "PASS",
+    "latency_verdict": "PASS"
+  },
+  "test_B_flir_proxy": {
+    "n_images": 30,
+    "detection_rate_pct": 3.3,
+    "mean_T_max_degC": 80.0,
+    "mean_latency_ms": 2.67,
+    "latency_verdict": "PASS"
+  }
+}

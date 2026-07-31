@@ -1,0 +1,17 @@
+{
+  "algorithm": {
+    "kalman_Q_area": 50.0,
+    "kalman_Q_dadt": 20.0,
+    "kalman_R_area": 100.0
+  },
+  "test_A_growth": {
+    "A1_mean_latency_ms": 1.34,
+    "A1_gt_dadt_thresh": 282.3,
+    "A1_final_dadt": 87.5,
+    "A1_direction_expanding": true,
+    "A1_latency_verdict": "PASS",
+    "A1_direction_verdict": "PASS",
+    "A2_final_static_dadt": -1.72,
+    "A2_static_verdict": "PASS"
+  }
+}

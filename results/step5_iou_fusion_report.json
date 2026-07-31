@@ -1,0 +1,27 @@
+{
+  "algorithm": {
+    "weights": {
+      "yolo": 0.35,
+      "thermal": 0.3,
+      "growth": 0.25,
+      "location": 0.1
+    },
+    "T_saturate_degC": 150.0,
+    "growth_saturate_px2s": 100.0,
+    "alert_thresh": 0.75,
+    "reverify_thresh": 0.5
+  },
+  "test_C_fusion": {
+    "C1_peak_P_fire": 0.922,
+    "C1_action": "ALERT_LOITER_UPLOAD",
+    "C1_verdict": "PASS",
+    "C2_peak_P_fire": 0.6,
+    "C2_action": "DESCEND_REVERIFY",
+    "C2_verdict": "PASS",
+    "C3_peak_P_fire": 0.373,
+    "C3_action": "CONTINUE_PATROL",
+    "C3_verdict": "PASS",
+    "mean_latency_ms": 0.082,
+    "latency_verdict": "PASS"
+  }
+}
